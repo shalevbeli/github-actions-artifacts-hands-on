@@ -8,7 +8,7 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Create a text file
       run: echo "Hello, world!" > hello.txt
@@ -20,6 +20,7 @@ jobs:
         path: hello.txt
 
   download:
+    needs: build
     runs-on: ubuntu-latest
     steps:
     - name: Download text file
@@ -30,4 +31,3 @@ jobs:
     
     - name: display the file content
       run: cat ./artifacts/hello.txt
-      
