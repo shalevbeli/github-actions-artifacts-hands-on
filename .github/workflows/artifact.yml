@@ -30,3 +30,4 @@ jobs:
     
     - name: display the file content
       run: cat ./artifacts/hello.txt
+      
